@@ -1,7 +1,7 @@
 <template>
   <div class="place-card">
     <img class="place-img" :src="place.image" @click="toggleDivClass(place.id)"/>
-    <span>last visit on {{ place.date }}</span>
+    <span>released since {{ place.date }}</span>
     
 <router-link :to="{name: 'Details', params: { id: place.id } }">
     <h4>{{ place.name }}</h4>

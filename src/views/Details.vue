@@ -1,15 +1,15 @@
 <template>
   <div v-if="place">
     <h1> {{ place.name }} </h1>
-    <p> last visited {{ place.date }} </p>
+    <p> released since {{ place.date }} </p>
     <p> {{ place.description }} </p>
-    <span> place #{{ $route.params.id}}</span>
+    <span> ID #{{ $route.params.id}}</span>
   </div>
 </template>
 
 
 <script>
-import PlaceService from '../services/PlaceService.js'
+import ProductService from '../services/ProductService.js'
 // @ is an alias to /src
 export default {
   props: ['id'],
@@ -20,7 +20,7 @@ export default {
   },
   created(){
     //fetch place data by id
-    PlaceService.fetchPlace(this.id)
+    ProductService.fetchProduct(this.id)
       .then(response => {
         this.place = response.data
       })
