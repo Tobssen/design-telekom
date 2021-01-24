@@ -1,6 +1,6 @@
 <template>
   <div class="place-card">
-    <img class="place-img" :src="require(place.image)" @click="toggleDivClass(place.id)"/>
+    <img class="place-img" :src="place.image" @click="toggleDivClass(place.id)"/>
     <span>released since {{ place.date }}</span>
     
 <router-link :to="{name: 'Details', params: { id: place.id } }">
