@@ -53,7 +53,7 @@ export default {
   box-shadow: 0 3px 12 px 0 rgba(0, 0, 0, 0.2);
 }
 .product-list-click {
-  background: #b2c5dd;
+  background:#fd8bce;
   padding: 20px;
   width:  90%;
   cursor: pointer;
