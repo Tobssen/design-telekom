@@ -1,10 +1,11 @@
 <template>
-  <div class="places">
-    <PlaceCard
-      v-for="place in places"
-      :id="place.id"
-      :key="place.id"
-      :place="place"
+  <div class="products">
+    <ListEntry
+      v-for="product in products"
+      :v-if="product.type=='tarif'" 
+      :id="product.id"
+      :key="product.id"
+      :product="product"
       
     />
   </div>
@@ -12,31 +13,31 @@
 
 <script>
 // @ is an alias to /src
-import PlaceCard from "@/components/PlaceCard.vue";
-import PlaceService from "@/services/PlaceService.js";
+import ListEntry from "@/components/ListEntry.vue";
+import ProductService from "@/services/ProductService.js";
 
 export default {
-  name: "places",
+  name: "tarife",
   components: {
-    PlaceCard
+    ListEntry
   },
   data() {
     return {
-      places: []
+      products: []
     };
   },
   mounted() {
-    this.getPlaces();
+    this.getProducts();
   },
   methods: {
-    async getPlaces() {
-      const response = await PlaceService.fetchPlaces();
-      this.places = response.data;
+    async getProducts() {
+      const response = await ProductService.fetchProducts();
+      this.products = response.data;
     },
-    toggleDivClass(placeId) {
-      console.log(placeId + document.getElementById(placeId));
-      document.getElementById(placeId).classList.toggle("place-card-click");
-      var x = document.getElementById("p" + placeId);
+    toggleDivClass(productId) {
+      console.log(productId + document.getElementById(productId));
+      document.getElementById(productId).classList.toggle("product-card-click");
+      var x = document.getElementById("p" + productId);
 
       console.log(x);
       if (x.style.display === "none") {
@@ -44,14 +45,14 @@ export default {
       } else {
         x.style.display = "none";
       }
-      document.getElementById(placeId).classList.toggle("place-card");
+      document.getElementById(productId).classList.toggle("product-card");
     }
   }
 };
 </script>
 
 <style scoped>
-.places {
+.products {
   display: flex;
   flex-direction: column;
   align-items: center;

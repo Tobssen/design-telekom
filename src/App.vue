@@ -1,12 +1,23 @@
 <template>
     
 <div id="mySidenav" class="sidenav">
-  
-  <a href="#"><router-link to="/">Dashboard</router-link></a>
-  <a v-bind:style="{ cursor: context-menu }"><router-link to="/">MarketingVariants</router-link></a>
-  <a href="#"><router-link to="/tarife">Tarife</router-link></a>
-  <a href="#"><router-link to="/hardware">Hardware</router-link></a>
+  <router-link to="/">
+    <img src="./assets/images/dashboard.png" class="icon">
+            Dashboard
+  </router-link>
+  <a>Marketing Variants</a>
+    <router-link to="/tarife">
+      <img src="./assets/images/steuerfrei.png" class="icon">
+            Tarife
+    </router-link>
+    <router-link to="/hardware">
+      <img src="./assets/images/server.png" class="icon">
+            Hardware
+    </router-link>
 </div>
+  <div class="footer">   
+    Copyright © 2020
+  </div>
 
 <div id="main">
     
@@ -22,7 +33,6 @@
     </div>  
   </div> 
 
-
 </div> 
 
 
@@ -33,9 +43,9 @@
 export default {
     methods:{
         openNav:function() {
-            document.getElementById("mySidenav").style.width = "320px";
-            document.getElementById("main").style.marginLeft = "320px";
-            document.getElementById("burger").style.marginLeft = "320px";
+            document.getElementById("mySidenav").style.width = "280px";
+            document.getElementById("main").style.marginLeft = "280px";
+            document.getElementById("burger").style.marginLeft = "280px";
             document.getElementById("mySidenav").classList.toggle('sidenavhover');
         },
         closeNav:function() {  
@@ -94,24 +104,37 @@ export default {
 	border-bottom: 1px solid #d5d5d5;
 }
 
+.footer {
+  z-index: 7;
+  position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	text-align: left;
+  color:white;
+	padding: 20px;
+	background: #ea0a8e;
+  border-top: 1px solid white;
+}
+
 .sidenav {
   text-align: left;
   position: fixed;
   z-index: 5;
-  width: 320px;
-  left: -322px;
+  width: 280px;
+  left: -281px;
   top: 0;
   bottom: 0;
   background-color: rgba(255, 255, 255);
   padding: 15px 0;
-  border-right: 2px solid #ea0a8e;
+  border-right: 1px solid rgb(206, 206, 206);
   transition: left 0.4s;
 }
 
 .sidenavhover {
   left: 0px;
   background-color: rgba(255, 255, 255);
-  border-right: 2px solid #ea0a8e;
+  border-right: 1px solid rgb(206, 206, 206);
   transition: left .4s;
 }
 
@@ -119,7 +142,7 @@ export default {
 .sidenav a {
   top:0px;
   float: left;
-  padding: 10px 80px 25px 32px;
+  padding: 20px 80px 35px 32px;
   text-decoration: none;
   font-size: 18px;
   color: #3d0b36;
@@ -149,6 +172,12 @@ export default {
 
 #mySidenav{
   text-align: left;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 20px;
 }
 
 </style>

@@ -59,7 +59,7 @@ export default {
   width: 250px;
   cursor: pointer;
   border: 1px solid #39495c;
-  margin: 8%;
+  margin: 12%;
   transform: scale(1.5);
 }
 .place-card-click:hover {
