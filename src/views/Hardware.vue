@@ -1,10 +1,10 @@
 <template>
   <div class="products">
-    <PlaceCard
+    <ListEntryHardware
       v-for="product in products"
       :id="product.id"
       :key="product.id"
-      :place="product"
+      :product="product"
       
     />
   </div>
@@ -12,13 +12,13 @@
 
 <script>
 // @ is an alias to /src
-import PlaceCard from "@/components/PlaceCard.vue";
+import ListEntryHardware from "@/components/ListEntryHardware.vue";
 import ProductService from "@/services/ProductService.js";
 
 export default {
-  name: "products",
+  name: "hardware",
   components: {
-    PlaceCard
+    ListEntryHardware
   },
   data() {
     return {
@@ -35,7 +35,7 @@ export default {
     },
     toggleDivClass(productId) {
       console.log(productId + document.getElementById(productId));
-      document.getElementById(productId).classList.toggle("place-card-click");
+      document.getElementById(productId).classList.toggle("product-card-click");
       var x = document.getElementById("p" + productId);
 
       console.log(x);
@@ -44,7 +44,7 @@ export default {
       } else {
         x.style.display = "none";
       }
-      document.getElementById(productId).classList.toggle("place-card");
+      document.getElementById(productId).classList.toggle("product-card");
     }
   }
 };

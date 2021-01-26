@@ -1,8 +1,7 @@
 <template>
   <div class="products">
-    <ListEntry
+    <ListEntryTarif
       v-for="product in products"
-      :v-if="product.type=='tarif'" 
       :id="product.id"
       :key="product.id"
       :product="product"
@@ -13,13 +12,13 @@
 
 <script>
 // @ is an alias to /src
-import ListEntry from "@/components/ListEntry.vue";
+import ListEntryTarif from "@/components/ListEntryTarif.vue";
 import ProductService from "@/services/ProductService.js";
 
 export default {
   name: "tarife",
   components: {
-    ListEntry
+    ListEntryTarif
   },
   data() {
     return {

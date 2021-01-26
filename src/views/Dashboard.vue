@@ -1,57 +1,57 @@
 <template>
-  <div class="places">
-    <PlaceCard v-for="place in places" :key="place.id" :place="place" />
+  <div class="products">
+    <ListEntry
+      v-for="product in products"
+      :id="product.id"
+      :key="product.id"
+      :product="product"
+      
+    />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import PlaceCard from "@/components/PlaceCard.vue";
+import ListEntry from "@/components/ListEntry.vue";
+import ProductService from "@/services/ProductService.js";
 
 export default {
-  name: "Dashboard",
+  name: "dashboard",
   components: {
-    PlaceCard
+    ListEntry
   },
   data() {
     return {
-      places: [
-        {
-          id: 111,
-          name: "Post Tower",
-          coordinates: "50.715908304046096, 7.130024727181158",
-          image: require("@/assets/images/Bonn_Posttower.jpg"),
-          date: "01.01.2020"
-        },
-        {
-          id: 112,
-          name: "Beethoven Haus",
-          coordinates: "50.73694246060538, 7.101285829373529",
-          image: require("@/assets/images/Bonn_Beethoven_Haus.png"),
-          date: "06.04.2002"
-        },
-        {
-          id: 113,
-          name: "Rheinaue",
-          coordinates: "50.71182963646694, 7.141172168659466",
-          image: require("@/assets/images/Bonn_Rheinaue.jpg"),
-          date: "02.05.2019"
-        },
-        {
-          id: 114,
-          name: "Secret Location",
-          coordinates: "",
-          image: require("@/assets/images/Bonn_Secret.jpg"),
-          date: "08.10.2020"
-        }
-      ]
+      products: []
     };
+  },
+  mounted() {
+    this.getProducts();
+  },
+  methods: {
+    async getProducts() {
+      const response = await ProductService.fetchProducts();
+      this.products = response.data;
+    },
+    toggleDivClass(productId) {
+      console.log(productId + document.getElementById(productId));
+      document.getElementById(productId).classList.toggle("product-card-click");
+      var x = document.getElementById("p" + productId);
+
+      console.log(x);
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+      document.getElementById(productId).classList.toggle("product-card");
+    }
   }
 };
 </script>
 
 <style scoped>
-.places {
+.products {
   display: flex;
   flex-direction: column;
   align-items: center;

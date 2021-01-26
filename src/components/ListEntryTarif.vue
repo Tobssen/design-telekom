@@ -1,5 +1,5 @@
 <template >
-  <div class="product-list"  @click="toggleDivClass(product.id)">
+  <div v-if="product.type==='tarif'" class="product-list"  @click="toggleDivClass(product.id)">
     <img class="product-img" :src="product.image"/>
     <span>released since {{ product.date }}</span>
     
