@@ -43,9 +43,9 @@
 export default {
     methods:{
         openNav:function() {
-            document.getElementById("mySidenav").style.width = "280px";
-            document.getElementById("main").style.marginLeft = "280px";
-            document.getElementById("burger").style.marginLeft = "280px";
+            document.getElementById("mySidenav").style.width = "300px";
+            document.getElementById("main").style.marginLeft = "300px";
+            document.getElementById("burger").style.marginLeft = "300px";
             document.getElementById("mySidenav").classList.toggle('sidenavhover');
         },
         closeNav:function() {  
@@ -121,20 +121,20 @@ export default {
   text-align: left;
   position: fixed;
   z-index: 5;
-  width: 280px;
-  left: -281px;
+  width: 300px;
+  left: -302px;
   top: 0;
   bottom: 0;
   background-color: rgba(255, 255, 255);
-  padding: 15px 0;
-  border-right: 1px solid rgb(206, 206, 206);
+  padding: 20px 0;
+  border-right: 2px solid rgb(206, 206, 206);
   transition: left 0.4s;
 }
 
 .sidenavhover {
   left: 0px;
   background-color: rgba(255, 255, 255);
-  border-right: 1px solid rgb(206, 206, 206);
+  border-right: 2px solid rgb(206, 206, 206);
   transition: left .4s;
 }
 
@@ -144,8 +144,20 @@ export default {
   float: left;
   padding: 20px 80px 35px 32px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   color: #3d0b36;
+  font-weight: bold;
+  display: block;
+  transition: 0.4s;
+}
+
+.sidenav a:hover {
+  top:0px;
+  float: left;
+  padding: 20px 80px 35px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #d819bf;
   font-weight: bold;
   display: block;
   transition: 0.4s;
@@ -175,8 +187,8 @@ export default {
 }
 
 .icon {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   margin-right: 20px;
 }
 
