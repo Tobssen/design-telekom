@@ -44,7 +44,7 @@ export default {
   padding: 20px;
   width:  90%;
   cursor: pointer;
-  border-bottom: 1px solid #39495c;
+  border-bottom: 1px solid #c0c0c0;
   margin-bottom: 18px;
   position: relative;
 }
@@ -58,7 +58,7 @@ export default {
   padding: 20px;
   width:  90%;
   cursor: pointer;
-  border-bottom: 1px solid #39495c;
+  border-bottom: 1px solid #c0c0c0;
   margin-bottom: 18px;
   position: relative;
   transform: scale(1.01);
