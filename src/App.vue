@@ -16,7 +16,7 @@
     </router-link>
 </div>
   <div class="footer">   
-    Copyright © 2020
+    Copyright © 2021
   </div>
 
 <div id="main">

@@ -2,8 +2,9 @@
   <div v-if="product.type==='hardware'" class="product-list"  @click="toggleDivClass(product.id)">
     <img class="product-img" :src="product.image"/>
     <span>released since {{ product.date }}</span>
-    
-<a v-bind:href="'/details/'+ product.id"> Details </a>
+    <router-link :to="{name: 'Details', params: { id: product.id } }">
+      <a>{{ product.name }}</a>
+    </router-link>
     <h4>{{ product.name }}</h4>
     
     <p :id="'p' + product.id" v-show="display == 'inline-block: false'">
