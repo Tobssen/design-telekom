@@ -134,7 +134,7 @@ export default {
 .sidenavhover {
   left: 0px;
   background-color: rgba(255, 255, 255);
-  border-right: 2px solid rgb(206, 206, 206);
+  border-right: 2px solid rgb(184, 178, 183);
   transition: left .4s;
 }
 
@@ -157,7 +157,8 @@ export default {
   padding: 20px 80px 35px 32px;
   text-decoration: none;
   font-size: 20px;
-  color: #d819bf;
+  color: rgb(216,25,191);
+
   font-weight: bold;
   display: block;
   transition: 0.4s;

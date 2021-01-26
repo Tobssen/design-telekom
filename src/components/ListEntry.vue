@@ -12,7 +12,6 @@
     </p>
   </div>
 </template>
-
 <script>
 export default {
   methods: {
@@ -54,7 +53,7 @@ export default {
   box-shadow: 0 3px 12 px 0 rgba(0, 0, 0, 0.2);
 }
 .product-list-click {
-  background:#fd8bce;
+  background: rgba(234,10,142, .25);
   padding: 20px;
   width:  90%;
   cursor: pointer;
