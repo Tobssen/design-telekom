@@ -15,9 +15,7 @@
             Hardware
     </router-link>
 </div>
-  <div class="footer">   
-    Copyright © 2021
-  </div>
+<Footer></Footer>
 
 <div id="main">
     
@@ -39,8 +37,13 @@
 
 </template>
 <script>
+import Footer from "@/components/Footer.vue";
 
+  
 export default {
+    components: {
+    Footer
+    },
     methods:{
         openNav:function() {
             document.getElementById("mySidenav").style.width = "300px";

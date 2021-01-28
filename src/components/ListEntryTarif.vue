@@ -1,15 +1,31 @@
 <template >
   <div v-if="product.type==='tarif'" class="product-list"  @click="toggleDivClass(product.id)">
-    <img class="product-img" :src="product.image"/>
-    <span>released since {{ product.date }}</span>
-    <router-link :to="{name: 'Details', params: { id: product.id } }">
-      <a>{{ product.name }}</a>
-    </router-link>
-    <h4>{{ product.name }}</h4>
-    
-    <p :id="'p' + product.id" v-show="display == 'inline-block: false'">
+
+  <table class="tg">
+    <thead>
+      <tr>
+        <th class="tg-0lax"><router-link :to="{name: 'Details', params: { id: product.id } }">
+                              <a>{{ product.name }}</a>
+                            </router-link></th>
+        <th class="tg-0lax">{{ product.download }}</th>
+        <th class="tg-0lax">{{ product.upload }}</th>
+        <th class="tg-0lax">{{ product.price }}</th>
+        <th class="tg-0lax"> <img class="product-img" :src="product.image"/></th>
+        <th class="tg-0lax"><p :id="'p' + product.id" v-show="display == 'inline-block: false'">
       {{ product.description }}
-    </p>
+    </p> </th>
+      </tr>
+    </thead>
+  </table>
+
+
+
+    
+    
+    
+
+    
+   
   </div>
 </template>
 
