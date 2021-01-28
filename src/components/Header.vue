@@ -5,10 +5,6 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped>
 .header {
   z-index: 4;
@@ -30,3 +26,44 @@ export default {};
     text-align: left;
 }
 </style>
+<script>
+
+  
+export default {
+    components: {
+    },
+    methods:{
+        openNav:function() {
+            document.getElementById("mySidenav").style.width = "300px";
+            document.getElementById("main").style.marginLeft = "300px";
+            document.getElementById("burger").style.marginLeft = "300px";
+            document.getElementById("mySidenav").classList.toggle('sidenavhover');
+        },
+        closeNav:function() {  
+            //document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";  
+            document.getElementById("burger").style.marginLeft= "0";   
+            document.getElementById("mySidenav").classList.toggle('sidenavhover');   
+        },
+        toggleNav:function() {
+            if(this.navExpanded){
+                this.closeNav();
+                this.navExpanded = false; 
+            }
+            else{
+                this.navExpanded = true;
+                this.openNav();}
+        }
+    },
+  computed: {
+    currentRouteName() {
+        return this.$route.name;
+    }
+  },
+    data(){
+        return{
+        navExpanded: false
+    }
+    }
+}
+</script>

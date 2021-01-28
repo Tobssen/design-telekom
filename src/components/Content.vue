@@ -22,5 +22,4 @@ export default {};
   left: 0px;
   margin-top: 100px;
 }
-}
 </style>
