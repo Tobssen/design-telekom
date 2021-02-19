@@ -1,28 +1,40 @@
 <template>
   <div class="products">
-    <ListEntryTarif
+
+    <TableHead :id="asdf" :key="asdf" :product="headline"/>
+    <Table
       v-for="product in products"
       :id="product.id"
       :key="product.id"
-      :product="product"
-      
+      :product="product"      
     />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import ListEntryTarif from "@/components/ListEntryTarif.vue";
+import Table from "@/components/v-data-table.vue";
+import TableHead from "@/components/v-data-table-head.vue";
 import ProductService from "@/services/ProductService.js";
 
 export default {
   name: "tarife",
   components: {
-    ListEntryTarif
+    Table,
+    TableHead
   },
   data() {
     return {
-      products: []
+      products: [],
+      headline:  {
+        description: "description", 
+        price: "Preis", 
+        download: "Download",
+        upload: "Upload",
+        name: "Vertrag",
+        date:"date", 
+        type:"tarif",
+        image: "Bild"},
     };
   },
   mounted() {
@@ -32,19 +44,6 @@ export default {
     async getProducts() {
       const response = await ProductService.fetchProducts();
       this.products = response.data;
-    },
-    toggleDivClass(productId) {
-      console.log(productId + document.getElementById(productId));
-      document.getElementById(productId).classList.toggle("product-card-click");
-      var x = document.getElementById("p" + productId);
-
-      console.log(x);
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-      document.getElementById(productId).classList.toggle("product-card");
     }
   }
 };
@@ -52,6 +51,8 @@ export default {
 
 <style scoped>
 .products {
+  
+  margin-top: 140px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -17,7 +17,6 @@
 <script>
 // @ is an alias to /src
 import ProductService from "@/services/ProductService.js";
-
 export default {
   name: "dashboard",
   components: {
