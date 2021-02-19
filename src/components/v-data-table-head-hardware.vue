@@ -40,6 +40,10 @@ export default {
   border-left: 1px solid #c0c0c0;
   border-collapse: collapse; 
 }
+tr{  
+  border-bottom: 3px solid #c0c0c0;
+  border-top: 2px solid #c0c0c0;
+}
 .product-img {
   width: 50px;
   height: 50px;
