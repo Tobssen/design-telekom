@@ -1,20 +1,21 @@
 <template>
   <div class="products">
-
-    <TableHead :id="asdf" :key="asdf" :product="headline"/>
-    <Table
-      v-for="product in products"
-      :id="product.id"
-      :key="product.id"
-      :product="product"      
-    />
+    <table>
+      <TableHead :id="asdf" :key="asdf" :product="headline"/>
+      <Table
+        v-for="product in products"
+          :id="product.id"
+          :key="product.id"
+          :product="product"      
+      />
+    </table>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Table from "@/components/v-data-table.vue";
-import TableHead from "@/components/v-data-table-head.vue";
+import Table from "@/components/v-data-table-tarif.vue";
+import TableHead from "@/components/v-data-table-head-tarif.vue";
 import ProductService from "@/services/ProductService.js";
 
 export default {
@@ -56,5 +57,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+table {
+  border-collapse: collapse; 
+  border: 1px solid #c0c0c0;
 }
 </style>

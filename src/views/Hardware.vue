@@ -1,24 +1,29 @@
 <template>
   <div class="products">
-    <ListEntryHardware
+
+    <table>
+    <TableHead/>
+    <Table
       v-for="product in products"
       :id="product.id"
       :key="product.id"
-      :product="product"
-      
+      :product="product"      
     />
+    </table>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import ListEntryHardware from "@/components/ListEntryHardware.vue";
+import Table from "@/components/v-data-table-hardware.vue";
+import TableHead from "@/components/v-data-table-head-hardware.vue";
 import ProductService from "@/services/ProductService.js";
 
 export default {
   name: "hardware",
   components: {
-    ListEntryHardware
+    Table,
+    TableHead
   },
   data() {
     return {
@@ -32,19 +37,6 @@ export default {
     async getProducts() {
       const response = await ProductService.fetchProducts();
       this.products = response.data;
-    },
-    toggleDivClass(productId) {
-      console.log(productId + document.getElementById(productId));
-      document.getElementById(productId).classList.toggle("product-card-click");
-      var x = document.getElementById("p" + productId);
-
-      console.log(x);
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-      document.getElementById(productId).classList.toggle("product-card");
     }
   }
 };
@@ -55,5 +47,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+table {
+  border-collapse: collapse; 
+  border: 1px solid #c0c0c0;
 }
 </style>
